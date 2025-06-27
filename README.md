@@ -7,6 +7,10 @@
 [![DeepSeek](https://img.shields.io/badge/DeepSeek-API-orange.svg)](https://deepseek.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+## 内容分析
+- 全部内容上传到master分支中
+- 除代码以外需要提交的内容已经保存至resource.zip中
+- 数据测试结果保存在data.zip中（包含师生协作写作的三次结果和两篇论文的论文分析）
 ## ✨ 核心功能
 
 ### 🤝 智能师生协作写作
