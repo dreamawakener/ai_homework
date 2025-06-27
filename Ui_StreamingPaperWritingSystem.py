@@ -398,14 +398,15 @@ class StreamingChatAgent:
                     full_response += content
 
                     cursor = self.spws_ptr.textEdit.textCursor()
-                    char_format = QTextCharFormat()
-                    char_format.setForeground(QColor("black"))
-                    cursor.setCharFormat(char_format)
                     cursor.movePosition(QtGui.QTextCursor.MoveOperation.End)
                     
                     for char in content:
-                        # 插入单个字符
-                        cursor.insertText(char)
+                        # 为每个字符创建新的格式并设置为黑色
+                        char_format = QTextCharFormat()
+                        char_format.setForeground(QColor("black"))
+                        
+                        # 插入单个字符并应用格式
+                        cursor.insertText(char, char_format)
                         
                         # 确保UI更新
                         QtCore.QCoreApplication.processEvents()
@@ -416,8 +417,6 @@ class StreamingChatAgent:
                     # 确保光标可见
                     self.spws_ptr.textEdit.setTextCursor(cursor)
                     self.spws_ptr.textEdit.ensureCursorVisible()
-                    
-                    
                     # # 打字机效果输出
                     # for char in content:
                     #     sys.stdout.write(char)
@@ -612,7 +611,7 @@ class StreamingPaperWritingSystem:
 
 class SPWS(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
+        MainWindow.setObjectName("师生协作写作平台+集成爬虫推荐文献功能")
         MainWindow.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -662,7 +661,7 @@ class SPWS(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "师生协作写作平台+集成爬虫推荐文献功能"))
         self.label.setText(_translate("MainWindow", "论文主要方向（如：医学、数学、语文等）："))
         self.label_2.setText(_translate("MainWindow", "论文主题（如：心血管疾病、微积分、古代诗词等）："))
         self.pushButton.setText(_translate("MainWindow", "生成"))

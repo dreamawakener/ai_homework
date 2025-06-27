@@ -1,0 +1,3 @@
+my_api_key = "sk-qullgfjnwatfbztwedpwajnagikznfbimlotgxhlloyrbkax"
+my_base_url = "https://api.siliconflow.cn/v1"
+my_model_name = "Pro/deepseek-ai/DeepSeek-V3"
